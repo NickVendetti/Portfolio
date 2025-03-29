@@ -2,7 +2,7 @@ export default function Contact() {
   return (
     <main className="container mx-auto p-8">
       <h1 className="text-4xl font-bold text-gray-400">Contact</h1>
-      <p className="mt-4 text-lg text-gray-700">
+      <p className="mt-4 text-lg text-gray-600">
         Feel free to reach out to me through any of the following platforms:
       </p>
 
