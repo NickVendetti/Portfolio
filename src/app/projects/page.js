@@ -31,7 +31,7 @@ export default function Projects() {
         "A website I built and deployed as a landing page for future employers to check out my work. THIS IS THE SITE!",
       techStack: ["React", "Next.js", "TailwindCSS"],
       github: "https://github.com/NickVendetti/Portfolio",
-      demo: "www.nickvendetti.dev"
+      demo: "/"
     }
   ];
 
