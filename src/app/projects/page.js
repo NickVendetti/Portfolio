@@ -17,21 +17,12 @@ export default function Projects() {
       demo: null
     },
     {
-      name: "Snack or Booze",
-      description:
-        "A web app where users can browse and add new food & drink items.",
-      techStack: ["React", "HTML", "CSS", "Express", "PostgreSQL", "Node.js"],
-      github:
-        "https://github.com/hatchways-community/snack-or-booze-1b8be44b955a44a193c65cd7d44c028b",
-      demo: null
-    },
-    {
       name: "Portfolio Website",
       description:
         "A website I built and deployed as a landing page for future employers to check out my work. THIS IS THE SITE!",
       techStack: ["React", "Next.js", "TailwindCSS"],
       github: "https://github.com/NickVendetti/Portfolio",
-      demo: "/"
+      demo: ""
     }
   ];
 
