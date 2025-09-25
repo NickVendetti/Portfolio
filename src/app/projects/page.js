@@ -30,42 +30,45 @@ export default function Projects() {
     <main className="container mx-auto p-8">
       <h1 className="text-4xl font-bold text-gray-400">Projects</h1>
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
-        {projects.map((project, index) =>
-          <div
-            key={index}
-            className="bg-white shadow-lg rounded-lg p-6 hover:shadow-xl transition"
-          >
-            <h2 className="text-2xl font-bold text-black">
-              {project.name}
-            </h2>
-            <p className="text-gray-600">
-              {project.description}
-            </p>
-            <p className="text-sm text-gray-500 mt-2">
-              Tech: {project.techStack.join(", ")}
-            </p>
-            <div className="mt-4 flex space-x-4">
-              <a
-                href={project.github}
-                className="text-blue-500 hover:text-blue-700"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                GitHub
-              </a>
-              {project.demo
-                ? <a
-                    href={project.demo}
-                    className="text-green-500 hover:text-green-700"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Live Demo
-                  </a>
-                : <span className="text-gray-500">(Can be run locally)</span>}
+        {projects.map((project, index) => {
+          console.log(project); // this just logs each project to your browser console
+          return (
+            <div
+              key={index}
+              className="bg-white shadow-lg rounded-lg p-6 hover:shadow-xl transition"
+            >
+              <h2 className="text-2xl font-bold text-black">
+                {project.name}
+              </h2>
+              <p className="text-gray-600">
+                {project.description}
+              </p>
+              <p className="text-sm text-gray-500 mt-2">
+                Tech: {project.techStack.join(", ")}
+              </p>
+              <div className="mt-4 flex space-x-4">
+                <a
+                  href={project.github}
+                  className="text-blue-500 hover:text-blue-700"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  GitHub
+                </a>
+                {project.demo
+                  ? <a
+                      href={project.demo}
+                      className="text-green-500 hover:text-green-700"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Site
+                    </a>
+                  : <span className="text-gray-500">(Can be run locally)</span>}
+              </div>
             </div>
-          </div>
-        )}
+          );
+        })}
       </div>
     </main>
   );
