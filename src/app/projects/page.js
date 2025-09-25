@@ -6,7 +6,7 @@ export default function Projects() {
         "A platform for discovering photographers based on style and location.",
       techStack: ["React", "Express", "PostgreSQL", "Node.js", "TailwindCSS"],
       github: "https://github.com/NickVendetti/photo-finder",
-      Site: "https://photo-finder-ten.vercel.app/"
+      demo: "https://photo-finder-ten.vercel.app/"
     },
     {
       name: "Jobly",
