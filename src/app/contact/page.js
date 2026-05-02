@@ -1,40 +1,50 @@
+const contacts = [
+  {
+    label: "Email",
+    value: "nrvendetti@gmail.com",
+    href: "mailto:nrvendetti@gmail.com",
+  },
+  {
+    label: "GitHub",
+    value: "github.com/NickVendetti",
+    href: "https://github.com/NickVendetti",
+  },
+  {
+    label: "LinkedIn",
+    value: "linkedin.com/in/nick-vendetti",
+    href: "https://www.linkedin.com/in/nick-vendetti/",
+  },
+];
+
 export default function Contact() {
   return (
-    <main className="container mx-auto p-8">
-      <h1 className="text-4xl font-bold text-gray-400">Contact</h1>
-      <p className="mt-4 text-lg text-gray-600">
-        Feel free to reach out to me through any of the following platforms:
+    <main className="container mx-auto px-8 py-12 max-w-xl">
+      <h1 className="text-4xl font-bold text-white">Contact</h1>
+      <p className="mt-3 text-gray-300">
+        I&apos;m open to new opportunities — feel free to reach out.
       </p>
-
-      <div className="mt-6 space-y-4">
-        <div>
-          <h2 className="text-2xl font-semibold">Email</h2>
-          <p className="text-lg text-gray-600">nrvendetti@gmail.com</p>
-        </div>
-
-        <div>
-          <h2 className="text-2xl font-semibold">GitHub</h2>
+      <div className="mt-8 space-y-4">
+        {contacts.map(({ label, value, href }) => (
           <a
-            href="https://github.com/NickVendetti"
-            className="text-blue-500 hover:text-blue-700"
-            target="_blank"
+            key={label}
+            href={href}
+            target={href.startsWith("mailto") ? undefined : "_blank"}
             rel="noopener noreferrer"
+            className="flex items-center justify-between p-4 bg-gray-800 rounded-lg border border-gray-700 hover:border-blue-500/60 hover:bg-gray-800/80 transition group"
           >
-            github.com/NickVendetti
+            <div>
+              <p className="text-xs text-gray-500 uppercase tracking-wider">
+                {label}
+              </p>
+              <p className="text-blue-400 group-hover:text-blue-300 transition mt-0.5">
+                {value}
+              </p>
+            </div>
+            <span className="text-gray-600 group-hover:text-blue-400 transition text-xl">
+              →
+            </span>
           </a>
-        </div>
-
-        <div>
-          <h2 className="text-2xl font-semibold">LinkedIn</h2>
-          <a
-            href="#"
-            className="text-blue-500 hover:text-blue-700"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            https://www.linkedin.com/in/nick-vendetti/
-          </a>
-        </div>
+        ))}
       </div>
     </main>
   );

@@ -1,20 +1,22 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import Link from "next/link";
+import NavLinks from "./components/NavLinks";
 import "./globals.css";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
-  subsets: ["latin"]
+  subsets: ["latin"],
 });
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
-  subsets: ["latin"]
+  subsets: ["latin"],
 });
 
 export const metadata = {
-  title: "Nick Vendetti Portfolio",
-  description: "Landing Page created with Next.js"
+  title: "Nick Vendetti — Full-Stack Developer",
+  description:
+    "Full-stack developer specializing in React, Node.js, PostgreSQL, and C#/ASP.NET. Browse my projects and get in touch.",
 };
 
 export default function RootLayout({ children }) {
@@ -23,47 +25,22 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <header className="fixed top-0 left-0 w-full p-5 bg-transparent text-white">
+        <header className="fixed top-0 left-0 w-full px-5 py-4 bg-gray-900/80 backdrop-blur-md border-b border-gray-800 text-white z-50">
           <div className="container mx-auto flex justify-between items-center">
-            <h1 className="text-2xl font-bold tracking-wide">Nick Vendetti</h1>
+            <Link
+              href="/"
+              className="text-2xl font-bold tracking-wide hover:text-blue-400 transition"
+            >
+              Nick Vendetti
+            </Link>
             <nav>
-              <ul className="flex space-x-6">
-                <li>
-                  <Link href="/" className="hover:text-blue-400 transition">
-                    Home
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/projects"
-                    className="hover:text-blue-400 transition"
-                  >
-                    Projects
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/about"
-                    className="hover:text-blue-400 transition"
-                  >
-                    About
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/contact"
-                    className="hover:text-blue-400 transition"
-                  >
-                    Contact
-                  </Link>
-                </li>
-              </ul>
+              <NavLinks />
             </nav>
           </div>
         </header>
-        <main className="bg-gray-900 text-white min-h-screen pt-16">
+        <div className="bg-gray-900 text-white min-h-screen pt-16">
           {children}
-        </main>
+        </div>
       </body>
     </html>
   );
